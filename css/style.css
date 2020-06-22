@@ -62,10 +62,11 @@ body::-webkit-scrollbar-thumb
  	padding-left: 0px !important;
  	height:550px;
  	position: relative;
+ 	clip-path: polygon(0% 0% , 100% 0% , 100% 70%, 0% 100%);
  }
  .my-banner::after
  {
- 	content: "DIGITAL \A PRODUCTS";
+ 	content: "";
  	white-space: pre;
  	top: 0;
  	left: 0;
@@ -77,23 +78,29 @@ body::-webkit-scrollbar-thumb
  	padding-top: 120px;
  	padding-left: 30px;
  	text-align: left;
- 	font-size:9vw;
+ 	font-size:8vw;
  	font-weight: bold;
  	line-height: 100px;
  	text-shadow: 6px 6px 4px black;
+ 	animation: changeContent 6s infinite ease-in;
+ 	animation-direction: alternate;  
+ 	/* alternate-> 0 to 100 & again 100 to 0 go back */
+
+ 	/* animation-fill-mode: backwards; */
+
  }
 
- @media screen and (max-width:772px)
- {
- 	.my-banner::after
- 	{
- 	
- 	
-		 	text-align: center;
-		 	font-size:10vw;
-		 	line-height: 75px;
- 	}
+ @keyframes changeContent{
+		
+	0%{content:"DIGITAL \A PRODUCTS";}
+ 	35%{ content: "PHONES & \A SECURITY CAMERAS";}
+ 	75%{ content: "PRINTERS & \A WIFI SERVICES";}
+ 	100%{ content: "CLOUD DEVICES & \A SOFTWARE SERVICES";}
+ 
+
  }
+
+
  
  /* ------Title section----- */
  .title
@@ -106,11 +113,21 @@ body::-webkit-scrollbar-thumb
 .bg-yellow
 {
 	background-color: #f79f24;
+	margin-top: -170px;
+	height: 375px;
+	padding-top: 10rem;
 }
 
 
 
 /* --------shop section-------- */
+#shop
+{
+	height: auto;
+	background: url('../img/bg_mid.png') no-repeat bottom;
+	background-size: contain;
+
+}
 .media-img
 {
 	height: 160px;
@@ -209,3 +226,43 @@ body::-webkit-scrollbar-thumb
 	color: grey;
 }
 
+
+@media screen and (max-width:992px)
+ {
+ 
+ 	.title
+ 	{
+ 		font-size: x-large;
+ 	}
+ 	.bg-yellow
+	{
+		background-color: #f79f24;
+		margin-top: -170px;
+		height: 365px;
+		padding-top: 10rem;
+	}
+ }
+
+
+ @media screen and (max-width:772px)
+ {
+ 	.my-banner::after
+ 	{
+		 	text-align: center;
+		 	font-size:9vw;
+		 	line-height: 75px;
+ 	}
+ 	.title
+ 	{
+ 		font-size: x-large;
+ 	}
+ 	.bg-yellow
+	{
+		background-color: #f79f24;
+		margin-top: -170px;
+		height: 400px;
+		padding-top: 10rem;
+	}
+ }
+
+ 
