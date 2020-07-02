@@ -128,7 +128,7 @@ body::-webkit-scrollbar-thumb
 	background-size: contain;
 
 }
-.media-img
+.media-img .img
 {
 	height: 160px;
 	width: 180px;
@@ -255,6 +255,26 @@ body::-webkit-scrollbar-thumb
  	.title
  	{
  		font-size: x-large;
+ 	}
+ 	.bg-yellow
+	{
+		background-color: #f79f24;
+		margin-top: -170px;
+		height: 400px;
+		padding-top: 10rem;
+	}
+ }
+ @media screen and (max-width:576px)
+ {
+ 	.my-banner::after
+ 	{
+		 	text-align: center;
+		 	font-size:9vw;
+		 	line-height: 75px;
+ 	}
+ 	.title
+ 	{
+ 		font-size:large;
  	}
  	.bg-yellow
 	{
